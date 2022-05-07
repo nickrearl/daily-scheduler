@@ -6,13 +6,13 @@ Create a website utilizing third-party APIs to track a users daily tasks and pro
 ![alt text](./Assets/images/05-third-party-apis-homework-demo.gif)
 
 ## Live Site
-COPY LINK HERE WHEN DEPLOYED
+https://nickrearl.github.io/daily-scheduler/
 
 ## Credits
-This was developed as part of MSUs coding bootcamp program the starter code and mock up were provided by the program copyrighted as follows: © 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
-Bootstrap is used for the CSS framework: https://getbootstrap.com/
-jQuery is used for the javascript: https://jquery.com/
-Moment.js is used for time functionality: https://momentjs.com/
+* This was developed as part of MSUs coding bootcamp program the starter code and mock up were provided by the program copyrighted as follows: © 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
+* Bootstrap is used for the CSS framework: https://getbootstrap.com/
+* jQuery is used for additional javascript functions and methods: https://jquery.com/
+* Moment.js is used for time functionality in javascript: https://momentjs.com/
 
 ## License 
 MIT License
