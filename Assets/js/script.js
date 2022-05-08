@@ -18,6 +18,8 @@ var pageDisplay = function(){
         timeCard.appendTo(hourBlockDiv)
 
         var taskField = $("<div class='task-field col-10'>")
+        .attr("data-index", i)
+
 
         if (parseInt(moment(currentHour).format("H")) === parseInt(moment().format("H"))) {
             taskField.addClass("present")
@@ -68,6 +70,10 @@ var pageDisplay = function(){
         $(".task-input").closest($(".task-field")).text(text)
 
         $(".task-input").remove()
+
+    })
+
+    timeBlocks.on("click", ".saveBtn", function(){
 
     })
 
