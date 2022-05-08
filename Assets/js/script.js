@@ -9,7 +9,7 @@ var dateDisplay = function(){
 var pageDisplay = function(){
     var hourCount = 9;
     for (i = 0; i < hourCount; i++) {
-        var currentHour = moment().set('hour', 15 + i)
+        var currentHour = moment().set('hour', 17 + i)
 
         var hourBlockDiv = $("<div class='hour-block col-12 col-lg row justify-content-between'>")
 
@@ -17,25 +17,21 @@ var pageDisplay = function(){
 
         timeCard.appendTo(hourBlockDiv)
 
-        var taskfield = $("<div class='task-field col-10'>")
-
-        console.log(i)
-        console.log(parseInt(moment(currentHour).format("H")));
-        console.log(parseInt(moment().format("H")))
+        var taskField = $("<div class='task-field col-10'>")
 
         if (parseInt(moment(currentHour).format("H")) === parseInt(moment().format("H"))) {
-            taskfield.addClass("present")
+            taskField.addClass("present")
         }
 
         else if (parseInt(moment(currentHour).format("H")) > parseInt(moment().format("H"))){
-            taskfield.addClass("future")
+            taskField.addClass("future")
         }
 
         else {
-            taskfield.addClass("past")
+            taskField.addClass("past")
         }
 
-        taskfield.appendTo(hourBlockDiv)
+        taskField.appendTo(hourBlockDiv)
 
         var saveButton = $("<button class='saveBtn col-1' type='button'>Save</i></button>")
 
@@ -47,7 +43,33 @@ var pageDisplay = function(){
 
     }
 
+    timeBlocks.on("click", ".task-field", function(){
+        $(this).text("")
 
+        var text = $(this)
+        .text()
+        .trim();
+    
+        var textInput = $("<textarea>")
+        .addClass("task-input")
+        .val(text);
+    
+        textInput.appendTo($(this));
+        
+        textInput.trigger("focus");
+    })
+
+    timeBlocks.on("blur", ".task-input", function(){
+        var text = $(".task-input")
+        .val()
+        .trim()
+
+
+        $(".task-input").closest($(".task-field")).text(text)
+
+        $(".task-input").remove()
+
+    })
 
 }
 
