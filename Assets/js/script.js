@@ -9,7 +9,7 @@ var dateDisplay = function(){
 var pageDisplay = function(){
     var hourCount = 9;
     for (i = 0; i < hourCount; i++) {
-        var currentHour = moment().set('hour', 17 + i)
+        var currentHour = moment().set('hour', 9 + i)
 
         var hourBlockDiv = $("<div class='hour-block col-12 col-lg row justify-content-between'>")
 
