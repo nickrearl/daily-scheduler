@@ -9,15 +9,31 @@ var dateDisplay = function(){
 var pageDisplay = function(){
     var hourCount = 9;
     for (i = 0; i < hourCount; i++) {
-        var currentHour = moment().set('hour', 9 + i)
+        var currentHour = moment().set('hour', 15 + i)
 
         var hourBlockDiv = $("<div class='hour-block col-12 col-lg row justify-content-between'>")
 
-        var timeCard = $("<p class='col-4'>").text(moment(currentHour).format("ha"))
+        var timeCard = $("<p class='col-1 pt-2'>").text(moment(currentHour).format("ha"))
 
         timeCard.appendTo(hourBlockDiv)
 
-        var taskfield = $("<p class='task-field'>")
+        var taskfield = $("<div class='task-field col-10'>")
+
+        console.log(i)
+        console.log(parseInt(moment(currentHour).format("H")));
+        console.log(parseInt(moment().format("H")))
+
+        if (parseInt(moment(currentHour).format("H")) === parseInt(moment().format("H"))) {
+            taskfield.addClass("present")
+        }
+
+        else if (parseInt(moment(currentHour).format("H")) > parseInt(moment().format("H"))){
+            taskfield.addClass("future")
+        }
+
+        else {
+            taskfield.addClass("past")
+        }
 
         taskfield.appendTo(hourBlockDiv)
 
@@ -26,9 +42,12 @@ var pageDisplay = function(){
         saveButton.appendTo(hourBlockDiv)
 
 
+
         hourBlockDiv.appendTo(timeBlocks)
 
     }
+
+
 
 }
 
